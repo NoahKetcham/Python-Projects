@@ -1,41 +1,38 @@
+# Creating parent class
+class BMW_M5:
+    Type = "M5"
+    where = "German"
 
-#Creating parent class
-class BMW:
-    where = "Munich, Germany"
-    Type = "car manufacturer"
-
-    def info(brand):
-        msg = "\nBMW is based in {} and they are a luxury {}, some of the more exciting models include ".format(brand.where,brand.Type)
+    def info(self):
+        msg = "\nThe BMW {} is a {} luxury super saloon, ".format(self.Type, self.where)
         return msg
 
-#Child class instance
-class M3(BMW):
-    chassis_code = 'e36'
-    horsepower = 220
-    weight = 3100
-#method
-    def spec(model):
-        msg = "the {} M3, which is a midsize luxury sportscar with a horsepower of {} and a curb weight of {}lbs.".format(model.chassis_code,model.horsepower,model.weight)
+# Child class instance
+class M5_Option(BMW_M5):
+    curb_weight = 4000
+    transmission = 'manual transmission'
+
+    # Method
+    def Option(self):
+        msg = "coming in at {}lbs and only available with a {}.".format(self.curb_weight, self.transmission)
         return msg
 
-#Another child class instance
-class M5(BMW):
-    chassis_code = 'e39'
+# Another child class instance
+class M5_Motor(BMW_M5):
+    engine_size = "4.4 liter v8"
     horsepower = 400
-    weight = 4000
-#method
-    def spec(model):
-        msg = "The {} M5, which is a large luxury super saloon with a horsepower of {} and a curb weight of {}lbs.".format(model.chassis_code,model.horsepower,model.weight)
+
+    # Method
+    def Motor(self):
+        msg = "the engine is a {} making over {} horsepower".format(self.engine_size, self.horsepower)
         return msg
 
 if __name__ == "__main__":
-    M3 = M3()
-    print(M3.info())
-    print(M3.spec())
+    option = M5_Option()
+    motor = M5_Motor()
 
-    M5 = M5()
-    print(M5.info())
-    print(M5.spec())
+    print(option.info())  # Calling info method from M5_Option instance which inherits BMW_M5
+    print(option.Option())  # Calling Option method from M5_Option instance
 
-
-    
+    print(motor.info())  # Calling info method from M5_Motor instance which inherits BMW_M5
+    print(motor.Motor())  # Calling Motor method from M5_Motor instance
