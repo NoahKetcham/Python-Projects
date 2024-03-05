@@ -39,9 +39,8 @@ def create_account(request):
     # Checks if request method is POST
     if request.method == 'POST':
         if form.is_valid():  # Check to see if the submitted form is valid and if so, saves the form
-            pk = request.POST['account']  # Retrieve which account the transaction was for
             form.save()  # Saves new account
-            return balance(request, pk)
+            return redirect('index')
     content = {'form': form}  # Saves content to the template as a dictionary
     # adds content of form to page
     return render(request, 'checkbook/CreateNewAccount.html', content)
