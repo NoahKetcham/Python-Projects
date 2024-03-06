@@ -4,13 +4,13 @@
 
 ## Projects:
 
-	- Project [Phonebook](./Phonebook)
+	- Project Phonebook
 	- Database Assignment
 	- Nice or Mean game
 	- Django University
 	- Checkbook Project
 
-###Phonebook
+### Phonebook
 > Designed a phonebook application with advanced features such as a GUI and a database.
 
 ### Database Project
